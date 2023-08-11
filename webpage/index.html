@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Include jQuery and Bootstrap CSS and JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Button to trigger displaying the sessions records -->
+    <p>Click the following button to see the sessions records</p>
+    <input id="button" type="button" value="Display" />
+
+    <br />
+
+    <!-- Container for displaying the sessions records table -->
+    <div hidden id="table">
+      <h2>Sessions Data:</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Ip Address</th>
+            <th>Session Id</th>
+            <th>Url Parameters</th>
+            <th>Created At</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+
+    <!-- Include the axios library for making asynchronous HTTP requests -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+      integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Include the JavaScript module for handling the logic -->
+    <script async type="module" src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "session",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Praveen Verma",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.12.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "ip": "^1.1.8",
+    "joi": "^17.9.2",
+    "serverless-http": "^3.1.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "serverless": "^3.28.1",
+    "serverless-offline": "^12.0.4",
+    "serverless-prune-plugin": "^2.0.2"
+  }
+}

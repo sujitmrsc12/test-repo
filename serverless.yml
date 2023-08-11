@@ -1,0 +1,47 @@
+service: session-management-service
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: 'us-east-1'
+  stage: 'dev'
+  memorySize: 128
+  timeout: 900
+  environment: ${file(env.yml)}
+
+custom:
+  prune:
+    automatic: true
+    number: 3
+
+package:
+  individually: true
+  excludeDevDependencies: false
+  exclude:
+    - 'node_modules/**'
+    - 'serverless.yml'
+    - '.serverless/**'
+    - 'lib/nodejs/node_modules/**'
+    - 'webpage/**'
+
+functions:
+  handler:
+    handler: index.handler
+    events:
+      - http: ANY /
+      - http: 'ANY /{proxy+}'
+    layers:
+      - { Ref: CommonLibsLambdaLayer }
+
+plugins:
+  - serverless-offline
+  - serverless-prune-plugin
+
+layers:
+  commonLibs:
+    path: lib
+    compatibleRuntimes:
+      - nodejs18.x
+    package:
+      include:
+        - node_modules/**
